@@ -1,0 +1,150 @@
+/* styles.css */
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  gap: "2px";
+}
+.leave-application {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.leave-application h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+/* Container Styles */
+.table-responsive.navbarCustom {
+  padding: 20px;
+}
+
+/* Table Styles */
+.table.table-hover {
+  background-color: #f7f7f7;
+}
+
+.bg-info {
+  background-color: #17a2b8 !important;
+  color: white;
+}
+
+/* Profile Image Styles */
+.rounded-circle.profileImage {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Modal Styles */
+.modal {
+  z-index: 9999;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Input Field Styles */
+.form-control {
+  border-radius: 0;
+}
+
+/* File Input Styles */
+input[type="file"] {
+  display: none;
+}
+
+/* Custom File Input Styles */
+.input-group-append input[type="file"] + label {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Action Button Styles */
+.btn-sm.shadow-lg.rounded-pill {
+  margin: 0 5px;
+}
+
+/* Employee Name Input Field Styles */
+.input-group-text {
+  background-color: #f7f7f7;
+}
+
+/* Buttons in Modal */
+.btn-primary.float-start {
+  margin: 10px 0;
+}
+
+/* Close Button in Modal */
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #007bff;
+  font-size: 20px;
+}
+
+/* Add Employee Button */
+.btn.btn-primary.m-2.float-end {
+  margin: 20px 0;
+}
+
+/* Navbar Styles */
+.navbarCustom {
+  padding: 20px;
+}
+
+/* Employee Management System Title */
+h1 {
+  text-align: center;
+  font-size: 26px;
+  color: #0077b6;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  color: white;
+  border: none;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
