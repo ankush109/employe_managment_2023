@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useReducer, useState } from "react";
 import { API_URL } from "../API_URL/api_url";
 import { NavBar } from "../Navigation Bar/header";
-
+import { toast } from "react-toastify";
 export const EmployeePage = () => {
   useEffect(() => {
     getPosts();
@@ -56,7 +56,8 @@ export const EmployeePage = () => {
       EmployeeName: "",
       Department: "",
       Date_of_Joining: "",
-      PhotoFileName: "",
+      PhotoFileName:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vvdCh5JrQq-R5rJVCd952Ick6pPkUGjojX8dC4KAEnWKi_vH0LVRASzo-JzaHrUzY8M&usqp=CAU",
       email: "",
       password: "",
       photoPath: "",
@@ -73,7 +74,8 @@ export const EmployeePage = () => {
       PhotoFileName: emp.PhotoFileName,
       email: "",
       password: "",
-      photoPath: "",
+      photoPath:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vvdCh5JrQq-R5rJVCd952Ick6pPkUGjojX8dC4KAEnWKi_vH0LVRASzo-JzaHrUzY8M&usqp=CAU",
     });
   };
 
@@ -82,7 +84,10 @@ export const EmployeePage = () => {
     formData.append("EmployeeName", formState.EmployeeName);
     formData.append("Department", formState.Department);
     formData.append("Date_of_Joining", formState.Date_of_Joining);
-    formData.append("PhotoFileName", "");
+    formData.append(
+      "PhotoFileName",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vvdCh5JrQq-R5rJVCd952Ick6pPkUGjojX8dC4KAEnWKi_vH0LVRASzo-JzaHrUzY8M&usqp=CAU"
+    );
     formData.append("email", formState.email);
     formData.append("password", formState.password);
 
@@ -95,17 +100,53 @@ export const EmployeePage = () => {
         },
       })
       .then((res) => {
-        alert("The Employee is successfully added!");
+        toast(`Employee Successfully Added`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         window.location.reload();
       })
       .catch((err) => {
         console.error(err);
         if (err.response) {
-          alert(`Error while Creating Employee: ${err.response.data.message}`);
+          toast(`Error while Creating Employee: ${err.response.data.message}`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         } else if (err.request) {
-          alert("Error sending request. Please try again later.");
+          toast("Error sending request. Please try again later.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         } else {
-          alert("Unknown error. Please try again later.");
+          toast("Unknown error. Please try again later.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       });
   };
@@ -148,12 +189,31 @@ export const EmployeePage = () => {
             }
           )
           .then((res) => {
-            alert("You have successfully updated Employee!");
+            toast("You have successfully updated Employee!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
             window.location.reload();
           })
           .catch((err) =>
-            alert(
-              `Error while updating the Employee: ${err.response.data.message}`
+            toast(
+              `Error while updating the Employee: ${err.response.data.message}`,
+              {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              }
             )
           );
       }
@@ -169,11 +229,29 @@ export const EmployeePage = () => {
           },
         })
         .then((res) => {
-          alert("You have successfully deleted Employee!");
+          toast("You have successfully deleted Employee!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           window.location.reload();
         })
         .catch((err) =>
-          alert(`Error while deleting Employee: ${err.response.data.message}`)
+          toast(`Error while deleting Employee: ${err.response.data.message}`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
         );
     }
   };
@@ -222,12 +300,17 @@ export const EmployeePage = () => {
                   <td data-title="Profile photo">
                     <img
                       className="rounded-circle profileImage"
-                      src={formState.photoPath + emp.PhotoFileName}
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vvdCh5JrQq-R5rJVCd952Ick6pPkUGjojX8dC4KAEnWKi_vH0LVRASzo-JzaHrUzY8M&usqp=CAU"
                       alt=""
                     />
                   </td>
                   <td data-title="Department">{emp.Department}</td>
-                  <td data-title="DOJ">{emp.Date_of_Joining}</td>
+
+                  <td data-title="DOJ">
+                    {new Intl.DateTimeFormat("en-US").format(
+                      new Date(emp.Date_of_Joining)
+                    )}
+                  </td>
                   <td data-title="Action">
                     <button
                       data-bs-toggle="modal"
@@ -360,7 +443,7 @@ export const EmployeePage = () => {
                           width="250px"
                           height="250px"
                           alt="d"
-                          src={`${formState.photoPath}${formState.PhotoFileName}`}
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vvdCh5JrQq-R5rJVCd952Ick6pPkUGjojX8dC4KAEnWKi_vH0LVRASzo-JzaHrUzY8M&usqp=CAU"
                         />
                         <input
                           className="m-2"

@@ -4,9 +4,12 @@
   "description": "Employee management using mern stack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon  index.js"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "nodemon index.js",
+  "dev": "nodemon Backend/server.js",
+  "dev2": "cd ..\\frontend && npm run start",
+  "both": "concurrently \"npm run dev\" \"npm run dev2\""
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tola-lemma/Employee-management-using-MERN-stack.git"
@@ -19,6 +22,7 @@
   "homepage": "https://github.com/Tola-lemma/Employee-management-using-MERN-stack#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

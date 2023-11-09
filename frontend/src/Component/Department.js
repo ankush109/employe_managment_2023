@@ -4,6 +4,7 @@ import axios from "axios";
 import p from "./dep.json";
 import Lottie from "react-lottie-player";
 import { API_URL } from "../API_URL/api_url";
+import { toast } from "react-toastify";
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_DEPARTMENT":
@@ -87,11 +88,29 @@ export const DepartmentPage = () => {
       )
       .then(
         (res) => {
-          alert("The Department is successfully added!");
+          toast(`Department Successfully Added`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           window.location.reload();
         },
         (err) =>
-          alert(`Error while Creating Deparment ${err.response.data.message}`)
+          toast(`Error while Creating Deparment ${err.response.data.message}`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
       );
   };
   //update department
@@ -113,12 +132,31 @@ export const DepartmentPage = () => {
           )
           .then(
             (res) => {
-              alert("Department updated successfully!");
+              toast("Department updated successfully!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
               window.location.reload();
             },
             (err) => {
-              alert(
-                `Error while updating the department, please try again ${err.response.data.message}`
+              toast(
+                `Error while updating the department, please try again ${err.response.data.message}`,
+                {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                }
               );
             }
           )
@@ -136,12 +174,31 @@ export const DepartmentPage = () => {
         })
         .then(
           (res) => {
-            alert("Department deleted successfully!");
+            toast("Department deleted successfully!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
             window.location.reload();
           },
           (err) => {
-            alert(
-              `Error while deleting the department, maybe incorrect id ! ${err.response.data.message}`
+            toast(
+              `Error while deleting the department, maybe incorrect id ! ${err.response.data.message}`,
+              {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              }
             );
           }
         );
