@@ -6,14 +6,22 @@
   padding: 1rem;
   text-align: center;
 }
+.g {
+  display: flex;
+  justify-content: center;
+  margin: 70px;
+  padding: 20px;
+}
 .flex {
   display: flex;
   gap: "2px";
 }
 .leave-application {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 1rem;
+  width: 400px;
+
+  padding: 2rem;
+
+  background-color: #84b5fe !important;
 }
 
 .leave-application h2 {

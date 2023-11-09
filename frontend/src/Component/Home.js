@@ -38,8 +38,10 @@ export const HomePage = () => {
       });
       if (result.data.foundUser.role == "user") {
         navigate("/user");
+      } else {
+        navigate("/department");
       }
-      navigate("/department");
+
       // window.location.reload();
     } catch (err) {
       toast(
