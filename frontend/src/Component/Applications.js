@@ -9,16 +9,32 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "center",
+
     justifyContent: "center",
-    minHeight: "100vh",
+    minHeight: "30vh",
+    padding: "20px",
   },
   listItem: {
     border: "1px solid black",
-    padding: "10px",
+    padding: "20px",
     margin: "10px",
     borderRadius: "5px",
     width: "400px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  },
+  label: {
+    fontWeight: "bold",
+    marginRight: "10px",
+  },
+  value: {
+    flex: 1,
+  },
+  header: {
+    textAlign: "center",
+    textDecoration: "none",
+    padding: "20px",
+    marginTop: "20px",
+    border: "1px solid black",
   },
 };
 
@@ -28,7 +44,7 @@ function Applications() {
   useEffect(() => {
     // Make an API call to fetch the list of leaves
     axios
-      .get("http://localhost:3000/api/applications", {
+      .get("http://localhost:4000/api/applications", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

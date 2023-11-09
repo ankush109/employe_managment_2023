@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
 export const NavBar = () => {
+  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    navigate("/");
   };
 
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/department">
           Employee Management System
         </Link>
         <ul className="navbar-nav ml-auto">

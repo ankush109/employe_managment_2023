@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../API_URL/api_url";
-
+import { toast } from "react-toastify";
+import { Input, TextField } from "@mui/material";
 export const HomePage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -25,6 +26,16 @@ export const HomePage = () => {
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("user", JSON.stringify(result.data.foundUser));
       // alert("You are logged in successfully!");
+      toast(`welcome ${result.data.foundUser.name}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       if (result.data.foundUser.role == "user") {
         navigate("/user");
       }
@@ -42,28 +53,38 @@ export const HomePage = () => {
     <div className="homepage">
       <div className="form-container">
         <h3 style={{ color: "black" }}>{modalTitle}</h3>
-        <div className="input-group">
-          <label style={{ color: "black" }}>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+        <div className="o">
+          <div className="input-group">
+            <TextField
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
+              required
+              value={email}
+              aria-label="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <div className="input-group">
-          <label style={{ color: "black" }}>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="input-group">
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="button-group">
+            <button className="btn btn-primary" onClick={handleLogin}>
+              {modalTitle}
+            </button>
+          </div>
         </div>
-        <div className="button-group">
-          <button className="btn btn-primary" onClick={handleLogin}>
-            {modalTitle}
-          </button>
-        </div>
+      </div>
+      <div>
+        <img src="https://i0.wp.com/juntrax.com/blog/wp-content/uploads/2021/01/Employee-Management-System.jpg?resize=840%2C480&ssl=1" />
       </div>
     </div>
   );

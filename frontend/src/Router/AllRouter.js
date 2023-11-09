@@ -32,11 +32,11 @@ export const AllRouter = () => {
     },
     {
       path: "/department",
-      element: localStorage.getItem("token") && <DepartmentPage />,
+      element: <DepartmentPage />,
     },
     {
       path: "/employee",
-      element: localStorage.getItem("token") && <EmployeePage />,
+      element: <EmployeePage />,
     },
   ]);
   return <RouterProvider router={router} />;
